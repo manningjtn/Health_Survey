@@ -1,8 +1,4 @@
+with survey_data_src as (select * from health_survey.survey_schema.survey_data)
 
-with survey_data_src as
-(
-SELECT *
-FROM HEALTH_SURVEY.SURVEY_SCHEMA.SURVEY_DATA
-)
-
-SELECT * FROM survey_data_src
+select *
+from survey_data_src
