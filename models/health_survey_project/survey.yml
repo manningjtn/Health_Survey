@@ -3,6 +3,10 @@ version: 2
 models:
   - name: health_survey_src
     description: This is a build to clean the zipcode error
+    
+  - name: county_src_dim
+    description: This is a model that will store county data in a table, based on zip_code and county ID
+  
 
 sources:
   - name: health_survey_src
@@ -10,3 +14,9 @@ sources:
     schema: SURVEY_SCHEMA
     tables:
       - name: SURVEY_DATA
+
+  - name: county_src_dim
+    database: HEALTH_SURVEY
+    schema: SURVEY_SCHEMA
+    tables:
+      - name: HEALTH_SURVEY_CLEANING

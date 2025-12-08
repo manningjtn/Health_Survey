@@ -1,4 +1,9 @@
-
+{{
+    config
+    (
+        materialized='table'
+    )
+}}
 with
     health_survey_src as (
     SELECT
@@ -7,7 +12,7 @@ with
         ADDRESS,
         CITY,
         STATE,
-        ZIPCODE,
+        CASE WHEN LENGTH(ZIP_CODE)<5 THEN CONCAT(0, ZIP_CODE) ELSE ZIP_CODE END AS ZIPCODE,
         COUNTY_NAME,
         PHONE_NUMBER,
         MEASURE_ID,
