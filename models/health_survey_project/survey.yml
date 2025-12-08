@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: health_survey_src
+    description: This is a build to clean the zipcode error
+
+sources:
+  - name: health_survey_src
+    database: HEALTH_SURVEY
+    schema: SURVEY_SCHEMA
+    tables:
+      - name: SURVEY_DATA
